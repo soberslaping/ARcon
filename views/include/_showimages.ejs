@@ -1,0 +1,18 @@
+<!-- here in ejs file i am usimg loop to iterate over the data received in paths through axios api from servver -->
+
+<% for(var i=0; i<paths.length; i++){ %>
+    <div class="w3-col l3 s6">
+        <div class="w3-container">
+            <div class="w3-display-container">
+                <img src=<%=paths[i].imgPath %> style="width:100%">
+                <!-- <span class="w3-tag w3-display-topleft">New</span> -->
+                <div class="w3-display-middle w3-display-hover">
+                   <a href="/viewObject?id=<%= paths[i]._id %>"> <button class="w3-button w3-black" >View <i class="fa fa-eye"></i></button></a>
+                </div>   <!-- iss url p jyga id ko parameter leke jyga-->
+            </div>
+            <p><%=paths[i].name %><br><b>$19.99</b></p>
+        </div>
+
+    </div>
+    <% } %>
+

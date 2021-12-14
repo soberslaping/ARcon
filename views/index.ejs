@@ -1,0 +1,79 @@
+
+<%- include('include/_header') %> <!-- Include header -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">Objects</p>
+    <p class="w3-right">
+      <i class="fa fa-upload w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="img/ar1.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small" id="first-image-text">AR viewing</h1>
+      <h1 class="w3-hide-large w3-hide-medium" id="first-image-text">AR viewing</h1>
+      <h1 class="w3-hide-small" id="first-image-text">Third Eye Visuals</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">VIEW</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p><%=paths.length %> items</p>
+  </div>
+
+  <div class="w3-row w3-grayscale" id="x123">
+    <%- include('include/_showimages') %>
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+
+<%- include('include/_footer') %> <!-- Include header -->
+<script>
+    // Accordion 
+    function myAccFunc() {
+      var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    
+    // Click on the "Jeans" link on page load to open the accordion for demo purposes
+    document.getElementById("myBtn").click();
+    
+    
+    // Open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+     
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+    </script>
+    
+    </body>
+    </html>
+    
