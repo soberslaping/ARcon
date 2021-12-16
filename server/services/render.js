@@ -12,12 +12,12 @@ exports.homeRoutes = (req, res) => {
 }
 
 exports.viewObject3d = (req, res) => {
-    // axios.get("http://localhost:3000/api/medias", { params: { id: req.query.id } })   //get request k through specific id leke ek
-    //     .then(function (userdata) {                                                   //lyga
-    //         res.render("hit_test", { specific_path: userdata.data })
-    //     })
-    //     .catch(err => {
-    //         res.send(err);
-    //     })
-    res.render('hit_test')
+    axios.get("http://localhost:3000/api/medias", { params: { id: req.query.id } })   //get request k through specific id leke ek
+        .then(function (userdata) {                                                   //lyga
+            res.render("hit_test", { specific_path: userdata.data })
+        })
+        .catch(err => {
+            res.send(err);
+        })
+    // res.render('hit_test')
 }

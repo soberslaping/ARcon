@@ -15,8 +15,8 @@
     <header>
       <details open>
         <summary>Hit Test</summary>
-        <p>
-          This sample demonstrates the use of hit testing to place virtual objects on real-world surfaces.
+        <p id="x1234">
+          This sample demonstrates the use of hit testing to place virtual objects on real-world surfaces. <%-specific_path.imgPath %>
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -36,7 +36,8 @@
       let xrRefSpace = null;
       let xrViewerSpace = null;
       let xrHitTestSource = null;
-
+      // let a=document.getElementById("x1234");
+      // a.innerHTML+= "<%-specific_path.name%>";
       // WebGL scene globals.
       let gl = null;
       let renderer = null;
@@ -48,7 +49,7 @@
       scene.addNode(arObject);
 
       // let flower = new Gltf2Node({url: 'media/gltf/sunflower/sunflower.gltf'});
-      let flower = new Gltf2Node({url: 'media/gltf/chair/Chair.glb'});
+      let flower = new Gltf2Node({url: '<%-specific_path.objPath%>'});
       arObject.addNode(flower);
 
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
